@@ -1,0 +1,42 @@
+.bg-header {
+    background-color: #131842;
+    text-align: center;
+}
+
+.h1-color {
+    color: #FBF6E2;
+}
+
+.p-color {
+    color: #ECCEAE;
+}
+
+form {
+    text-align: center;
+}
+
+.nav-btn {
+    background-color: #E68369;
+    border-color: #131842;
+    width: 300px;
+}
+
+.box-column {
+    background-color: #ECCEAE;
+    text-align: center;
+    display: inline-block;
+}
+
+.h3-color {
+    color: #131842;
+}
+
+.info-btn {
+    color: #FBF6E2;
+    background-color: #131842;
+}
+
+footer {
+    background-color: #E68369;
+    text-align: center;
+}
