@@ -1,0 +1,46 @@
+/* 
+https://colorhunt.co/palette/191657 
+*/
+
+/* 
+primary: #383e56
+secondary: #f69e7b
+info: #d4b5b0 
+light: #eedad1
+*/
+
+.bg-primary {
+    background-color: #383e56;
+}
+
+.bg-secondary {
+    background-color: #f69e7b;
+}
+
+.bg-info {
+    background-color: #d4b5b0
+}
+
+.text-primary {
+    color: #383e56;
+}
+
+.text-info {
+    color: #d4b5b0;
+}
+
+.text-light {
+    color: #eedad1;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.w-200 {
+    width: 200px;
+}
