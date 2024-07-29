@@ -1,0 +1,96 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    max-width: 600px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1em;
+    display: block;
+    text-align: center;
+    background-color: #264653;
+    color: #fff;
+}
+
+.btn {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin: 0 0.1em;
+    border-radius: 0.5em;
+}
+
+.btn-primary {
+    background-color: #264653;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #2a9d8f;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #e76f51;
+    color: #fff;
+}
+
+.btn-info {
+    background-color: #e9c46a;
+    color: black;
+}
+
+.btn-success {
+    background-color: #f4a261;
+    color: black;
+}
+
+.card {
+    width: 20rem;
+    overflow: hidden;
+    background-color: #264653;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.card-body h5 {
+    font-size: 1.5rem;
+    margin: 1em 0;
+    font-weight: 900;
+}
+
+.card-body p {
+    font-weight: 300;
+}
