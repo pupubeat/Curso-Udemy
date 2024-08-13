@@ -114,6 +114,11 @@ body {
     }
 }
 
+.tienda {
+    display: flex;
+    justify-content: space-around;
+}
+
 .card {
     width: 300px;
     background-color: #A6444C;
