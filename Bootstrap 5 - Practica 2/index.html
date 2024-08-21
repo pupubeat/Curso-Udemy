@@ -11,6 +11,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Normalize -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
 </head>
 
 <body>
@@ -124,7 +126,7 @@
                 <i class="bi bi-chat-square-dots"></i>
             </div>
             <h2 class="text-center display-4 mb-5">Comentarios</h2>
-            <p class="lead text-center mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cupiditate
+            <p class="lead text-center pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus cupiditate
                 quidem sint
                 expedita, ea commodi amet quibusdam maxime quam est, veritatis a sapiente totam beatae quod optio
                 exercitationem quaerat illo?</p>
@@ -207,11 +209,11 @@
                 <i class="bi bi-credit-card"></i>
             </div>
             <h2 class="text-center display-4 mb-5">Suscríbete</h2>
-            <p class="lead text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, tempora?
+            <p class="lead text-center pb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, tempora?
                 Obcaecati rem provident voluptatem non id veniam aperiam voluptatibus nihil, deleniti atque veritatis a
                 voluptate debitis dolores distinctio exercitationem qui!</p>
             <div class="row">
-                <div class="col-12 col-md-4 mb-5">
+                <div class="col-12 col-md-4 pb-5">
                     <div class="card text-center">
                         <div class="card-body">
                             <h5 class="card-title py-5 h1">$100</h5>
@@ -222,11 +224,12 @@
                             <li class="list-group-item">A third item</li>
                         </ul>
                         <div class="card-body">
-                            <button class="btn btn-dark">Suscríbete</button>
+                            <button class="btn btn-dark" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal1">Suscríbete</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 mb-5">
+                <div class="col-12 col-md-4 pb-5">
                     <div class="card text-center">
                         <div class="card-body">
                             <h5 class="card-title py-5 h1">$500</h5>
@@ -237,11 +240,12 @@
                             <li class="list-group-item">A third item</li>
                         </ul>
                         <div class="card-body">
-                            <button class="btn btn-dark">Suscríbete</button>
+                            <button class="btn btn-dark" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal2">Suscríbete</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 mb-5">
+                <div class="col-12 col-md-4 pb-5">
                     <div class="card text-center">
                         <div class="card-body">
                             <h5 class="card-title py-5 h1">$900</h5>
@@ -252,14 +256,78 @@
                             <li class="list-group-item">A third item</li>
                         </ul>
                         <div class="card-body">
-                            <button class="btn btn-dark">Suscríbete</button>
+                            <button class="btn btn-dark" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal3">Suscríbete</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer></footer>
+
+    <!-- Modal 1-->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel1">Modal 1</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2-->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel1">Modal 2</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3-->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel1">Modal 3</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid text-center bg-dark text-light">
+            <p class="py-2">Lorem, ipsum dolor.</p>
+        </div>
+    </footer>
 
 
     <!--Bootstrap JS-->
