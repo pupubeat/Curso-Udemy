@@ -58,7 +58,11 @@
                     <input type="checkbox" name="checkLabel" id="checkbox" class="form-check-input">
                     <label for="checkbox" class="form-check-label">Acepto los términos y condiciones.</label>
                 </div>
-                <button class="btn btn-info text-light" type="submit">Enviar</button>
+                <button id="botonEnviar" class="btn btn-info text-light" type="submit">Enviar</button>
+                <button id="botonCargando" class="btn btn-secondary d-none" type="button" disabled>
+                    <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                    Cargando...
+                </button>
             </form>
         </div>
     </main>
@@ -69,6 +73,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
+    <!-- Script JS -->
     <script src="/app.js"></script>
 </body>
 
