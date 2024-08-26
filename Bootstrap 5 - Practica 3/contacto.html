@@ -15,7 +15,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
         <div class="container">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -40,11 +40,16 @@
     <!-- Formulario -->
     <main>
         <div class="container">
-            <h1 class="text-center">Contacto</h1>
+            <h1 class="text-center py-3">Contacto</h1>
             <hr>
-            <label for="email"></label>
+
             <form>
-                <input type="email" class="form-control" name="email" id="email">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Ingresa aquí tu Email"
+                        aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">No compartiremos tus datos con nadie.</div>
+                </div>
             </form>
         </div>
     </main>
