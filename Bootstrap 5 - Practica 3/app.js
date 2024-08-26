@@ -2,6 +2,7 @@
 const formulario = document.querySelector('#formulario')
 const btnEnviar = document.querySelector('#botonEnviar')
 const btnCargando = document.querySelector('#botonCargando')
+const toast = document.querySelector('.toast')
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -20,6 +21,10 @@ formulario.addEventListener('submit', (e) => {
     window.setTimeout(() => {
         btnCargando.classList.add('d-none')
         btnEnviar.classList.remove('d-none')
+
+        // Evento Toast y mostrarlo cuando se envían los datos sin problemas.
+        const eventToast = new bootstrap.Toast(toast)
+        eventToast.show()
     }, 3000)
 
     // Limpiar los datos del formulario.
