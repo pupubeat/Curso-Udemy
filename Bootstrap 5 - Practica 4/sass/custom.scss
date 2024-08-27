@@ -4,6 +4,15 @@ $font-family-base: "Montserrat", sans-serif;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+header {
+    background-image: url('../img/img-1.jpg');
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
 .nav-bg {
     background-color: $teal-500;
 }
@@ -11,4 +20,10 @@ $font-family-base: "Montserrat", sans-serif;
 .nav-form {
     background-color: $teal-500;
     border-color: $light;
+}
+
+@include media-breakpoint-up(md) {
+    header {
+        height: 400px;
+    }
 }
