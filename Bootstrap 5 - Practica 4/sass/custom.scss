@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$font-family-base: "Montserrat", sans-serif;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.nav-bg {
+    background-color: $teal-500;
+}
+
+.nav-form {
+    background-color: $teal-500;
+    border-color: $light;
+}
