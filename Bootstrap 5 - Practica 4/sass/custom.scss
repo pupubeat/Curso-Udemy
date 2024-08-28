@@ -27,6 +27,10 @@ header {
     background-color: $teal-500;
 }
 
+.btn-aqua {
+    background-color: $teal-500;
+}
+
 @include media-breakpoint-up(md) {
     header {
         height: 400px;
