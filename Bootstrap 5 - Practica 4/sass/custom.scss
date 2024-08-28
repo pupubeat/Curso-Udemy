@@ -23,6 +23,10 @@ header {
     border-color: $light;
 }
 
+.progress-bar {
+    background-color: $teal-500;
+}
+
 @include media-breakpoint-up(md) {
     header {
         height: 400px;

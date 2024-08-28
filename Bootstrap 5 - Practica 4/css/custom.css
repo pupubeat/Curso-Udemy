@@ -12708,6 +12708,10 @@ header {
   border-color: #f8f9fa;
 }
 
+.progress-bar {
+  background-color: #20c997;
+}
+
 @media (min-width: 768px) {
   header {
     height: 400px;
