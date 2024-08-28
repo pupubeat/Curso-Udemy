@@ -49,26 +49,71 @@
             Nihil quisquam
             fugit corrupti aut? Esse accusamus, velit quo fuga veritatis nam exercitationem pariatur earum! Est dicta
             rem voluptate!</p>
-        <div class="row pt-5">
-            <div class="col-12 col-md-4">
-                <h2>5.000</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="col-12 col-md-4">
-                <h2>10,5</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="col-12 col-md-4">
-                <h2>75%</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
+        <div class="py-5">
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-4">
+                    <label for="text1" class="form-label">Nombre</label>
+                    <input type="text" id="text1" value="Mark" class="form-control" required>
+                    <div class="valid-feedback">
+                        Todo correcto.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="text2" class="form-label">Apellido</label>
+                    <input type="text" id="text2" value="Otto" class="form-control" required>
+                    <div class="valid-feedback">
+                        Todo correcto.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="text3" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">@</span>
+                        <input type="text" id="text3" class="form-control" aria-describedby="iconUserName" required>
+                        <div class="invalid-feedback">
+                            Coloque su nombre de usuario.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="text4" class="form-label">Ciudad</label>
+                    <input type="text" id="text4" class="form-control" value="Santiago" required>
+                    <div class="invalid-feedback">
+                        Coloque su Ciudad.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="text5" class="form-label">Estado</label>
+                    <select id="text5" class="form-select" required>
+                        <option value="" selected disabled>Elija una opción ...</option>
+                        <option value="">...</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Coloque su Estado.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="text6" class="form-label">Código Postal</label>
+                    <input type="text" id="text6" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Coloque su Código Postal.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="text7" required>
+                        <label for="text7">Acepto los términos y condiciones.</label>
+                        <div class="invalid-feedback">
+                            Acepte las condiciones.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-aqua">Procesar</button>
+                </div>
+            </form>
         </div>
-        <div class="pb-5">
-            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
-                aria-valuemax="100">
-                <div class="progress-bar" style="width: 75%"></div>
-            </div>
-        </div>
+
     </main>
 
     <footer class="text-center my-5">
@@ -77,6 +122,8 @@
 
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Formulario JS -->
+    <script src="js/formulario.js"></script>
 </body>
 
 </html>
