@@ -1,3 +1,11 @@
+// Capturar elementos desde el archivo HTML
+const chat = document.getElementById('chat')
+const btnIngresar = document.getElementById('btnIngresar')
+const btnSalir = document.getElementById('btnSalir')
+const btnEnviar = document.getElementById('btnEnviar')
+const formulario = document.getElementById('formulario')
+
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js'
