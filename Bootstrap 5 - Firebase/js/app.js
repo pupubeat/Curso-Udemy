@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js'
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js'
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js'
 
 // Capturar elementos desde el archivo HTML
@@ -39,4 +39,8 @@ btnIngresar.addEventListener("click", async () => {
     } catch (error) {
         console.log(error)
     }
+})
+
+btnSalir.addEventListener("click", async () => {
+    await signOut(auth);
 })
