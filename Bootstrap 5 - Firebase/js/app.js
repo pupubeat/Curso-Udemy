@@ -1,14 +1,13 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js'
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js'
+
 // Capturar elementos desde el archivo HTML
 const chat = document.getElementById('chat')
 const btnIngresar = document.getElementById('btnIngresar')
 const btnSalir = document.getElementById('btnSalir')
 const btnEnviar = document.getElementById('btnEnviar')
 const formulario = document.getElementById('formulario')
-
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js'
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js'
 
 const firebaseConfig = {
     apiKey: "AIzaSyDZZwwApv293bp8UlOZzq2qXcUHWhS1xPE",
@@ -22,5 +21,22 @@ const firebaseConfig = {
 
 // Inicializar App
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
-const provider = new GoogleAuthProvider()
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("Existe el usuario:", user)
+    } else {
+        console.log("no existe el usuario.")
+    }
+});
+
+btnIngresar.addEventListener("click", async () => {
+    try {
+        const provider = new GoogleAuthProvider()
+        const result = await signInWithPopup(auth, provider)
+        console.log(result)
+    } catch (error) {
+        console.log(error)
+    }
+})
