@@ -43,4 +43,4 @@ btnIngresar.addEventListener("click", async () => {
 
 btnSalir.addEventListener("click", async () => {
     await signOut(auth);
-})
+});
