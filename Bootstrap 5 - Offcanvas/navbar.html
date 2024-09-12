@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarCanvas">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-primary text-white fixed-top" id="navbarCanvas">
+        <div class="container">
+            <i class="bi bi-list" type="button" aria-controls="offCanvasDemo1" data-bs-toggle="offcanvas"
+                data-bs-target="#offCanvasDemo1">
+            </i>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <div class="container">
+        <section class="vh-100 pt-5" id="uno">
+            <h2 class="display-5 mt-5">Título-1</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsam saepe non quibusdam
+                itaque tenetur repudiandae et eos optio incidunt. Animi labore, atque tempore nisi eos dicta vero
+                exercitationem cum!</p>
+        </section>
+        <section class="vh-100 pt-5">
+            <h2 class="display-5 mt-5" id="dos">Título-2</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsam saepe non quibusdam
+                itaque tenetur repudiandae et eos optio incidunt. Animi labore, atque tempore nisi eos dicta vero
+                exercitationem cum!</p>
+        </section>
+        <section class="vh-100 pt-5" id="tres">
+            <h2 class="display-5 mt-5">Título-3</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ipsam saepe non quibusdam
+                itaque tenetur repudiandae et eos optio incidunt. Animi labore, atque tempore nisi eos dicta vero
+                exercitationem cum!</p>
+        </section>
+    </div>
+
+    <div class="container">
+        <h1 class="text-primary">Navbar</h1>
+    </div>
+    <div class="offcanvas offcanvas-start bg-primary text-white" id="offCanvasDemo1"
+        aria-labelledby="offCanvasDemo1Label">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title text-center">OffCanvas Title</h2>
+            <h2 type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="bi bi-x-square"></i>
+            </h2>
+        </div>
+        <div class="offcanvas-body">
+            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque nulla, incidunt
+                aspernatur veritatis ullam, hic voluptatibus rerum qui ex atque vel, quis maiores id sapiente
+                dignissimos repellendus rem repudiandae earum!</p>
+            <div class="d-grid gap-2">
+                <a href="#uno" class="btn btn-info text-white">
+                    <i class="bi bi-google"></i>Acceder
+                </a>
+                <a href="#dos" class="btn btn-info text-white">
+                    <i class="bi bi-credit-card"></i>Planes
+                </a>
+                <a href="#tres" class="btn btn-info text-white">
+                    <i class="bi bi-controller"></i>Juegos
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
