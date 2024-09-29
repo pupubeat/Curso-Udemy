@@ -17,6 +17,11 @@
             <input class="form-control mb-2" type="text" name="userName" placeholder="Ingrese su nombre"
                 autocomplete="off" id="userName" required minlength="3" maxlength="10"
                 pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Solo letras en el nombre.">
+            <input class="form-control mb-2" type="email" name="userEmail" placeholder="Ingrese su correo electrónico"
+                autocomplete="off" id="userEmail" required
+                pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                title="Ingresa un email válido">
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
 </body>
