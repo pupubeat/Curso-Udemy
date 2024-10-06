@@ -1,8 +1,7 @@
-// Capturar elementos del HTML
+// Capturar elementos del HTML //
 const formulario = document.getElementById('formulario')
 const userName = document.getElementById('userName')
 const userEmail = document.getElementById('userEmail')
-
 // Alerts
 const alertUsername = document.getElementById('alertUsername')
 const alertEmail = document.getElementById('alertEmail')

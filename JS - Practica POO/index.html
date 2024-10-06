@@ -23,7 +23,48 @@
                 <button class="btn btn-primary" type="submit">Agregar</button>
             </select>
         </form>
+
+        <section class="row mt-3">
+            <div class="col-6" id="cardEstudiantes">
+
+            </div>
+            <div class="col-6" id="cardProfesor">
+
+            </div>
+        </section>
     </div>
+
+    <!-- Cards dinámicas: Estudiantes/Profesores -->
+
+    <!-- Estudiantes -->
+    <template id="templateEstudiante">
+        <article class="card mb-2">
+            <div class="card-body">
+                <h5>
+                    <span class="text-primary">Nombre</span>
+                    <span class="badge bg-success">Aprobado</span>
+                </h5>
+                <h6>Estudiante</h6>
+                <p class="lead">Edad</p>
+                <button class="btn btn-success">Aprobar</button>
+                <button class="btn btn-danger">Reprobar</button>
+            </div>
+        </article>
+    </template>
+
+    <!-- Profesores -->
+    <template id="templateProfesor">
+        <article class="card mb-2 bg-dark text-white">
+            <div class="card-body">
+                <h5>Nombre</h5>
+                <h6>Profesor</h6>
+                <p class="lead">Edad</p>
+            </div>
+        </article>
+    </template>
+    <!-- Cards dinámicas: Estudiantes/Profesores -->
+
+
     <script src="app.js"></script>
 </body>
 
