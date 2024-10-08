@@ -7,23 +7,6 @@ const templateProfesor = document.getElementById('templateProfesor').content
 
 const estudiantes = []; // Array para agrupar todos los estudiantes a agregar en el formulario
 
-formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const datos = new FormData(formulario);
-    // console.log([...datos.values()])
-    const [nombre, edad, opcion] = [...datos.values()]; // desestructurar los values de la data del formulario.
-
-    // Condición si elijes la opción de estudiante
-    if (opcion === 'Estudiante') {
-        const estudiante = new Estudiante(nombre, edad);
-        estudiantes.push(estudiante) // Agregar nuevo estudiante al array vacío.
-    }
-
-    if (opcion === 'Profesor') {
-
-    }
-})
-
 // Creación de objetos: Persona, Estudiante y Profesor.
 
 // Persona //
@@ -40,7 +23,6 @@ class Persona {
                 fragment.appendChild(item.agregarNuevoEstudiante())
             })
             cardEstudiantes.appendChild(fragment)
-
         }
     }
 }
@@ -60,6 +42,39 @@ class Estudiante extends Persona {
 
     agregarNuevoEstudiante() {
         const clone = templateEstudiante.cloneNode(true)
-        clone.querySelector('h5 .text-primary').textContent = this.nombre
+        clone.querySelector('h5').textContent = this.nombre
+        clone.querySelector('h6').textContent = this.#estudiante
+        clone.querySelector('.lead').textContent = this.edad
+        return clone
     }
 }
+
+// Profesores //
+class Profesor extends Persona {
+    #profesor = "Profesor"
+
+    agregarNuevoProfesor() {
+        const clone = templateProfesor.cloneNode(true)
+        clone.querySelector('h5').textContent = this.nombre
+        clone.querySelector('h6').textContent = this.#profesor
+        clone.querySelector('.lead').textContent = this.edad
+        return clone
+    }
+}
+
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const datos = new FormData(formulario);
+    // console.log([...datos.values()])
+    const [nombre, edad, opcion] = [...datos.values()]; // desestructurar los values de la data del formulario.
+
+    // Condición si elijes la opción de estudiante
+    if (opcion === 'Estudiante') {
+        const estudiante = new Estudiante(nombre, edad);
+        estudiantes.push(estudiante) // Agregar nuevo estudiante al array vacío.
+    }
+
+    if (opcion === 'Profesor') {
+
+    }
+})
