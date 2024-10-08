@@ -12,3 +12,22 @@ class Persona {
         this.edad = edad
     }
 }
+
+class Estudiante extends Persona {
+    #estado = false
+    #estudiante = "Estudiante"
+
+    set setEstado(estado) {
+        this.#estado = estado
+    }
+
+    get getEstado() {
+        return this.#estudiante
+    }
+
+    agregarNuevoEstudiante() {
+        const clone = templateEstudiante.cloneNode(true)
+        clone.querySelector('h5 .text-primary').textContent = this.nombre
+        clone.querySelector('p').textContent = this.edad
+    }
+}
