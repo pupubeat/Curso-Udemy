@@ -5,7 +5,16 @@ const cardProfesor = document.getElementById('cardProfesor')
 const templateEstudiante = document.getElementById('templateEstudiante').content
 const templateProfesor = document.getElementById('templateProfesor').content
 
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const datos = new FormData(formulario);
+    // console.log([...datos.values()])
+    const [nombre, edad, opcion] = [...datos.values()];
+})
+
 // Creación de objetos: Persona, Estudiante y Profesor.
+
+// Persona //
 class Persona {
     constructor(nombre, edad) {
         this.nombre = nombre;
@@ -13,6 +22,7 @@ class Persona {
     }
 }
 
+// Estudiante //
 class Estudiante extends Persona {
     #estado = false
     #estudiante = "Estudiante"
