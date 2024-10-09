@@ -51,10 +51,22 @@ class Estudiante extends Persona {
 
     agregarNuevoEstudiante() {
         const clone = templateEstudiante.cloneNode(true);
-        clone.querySelector('h5').textContent = this.nombre;
+
+        clone.querySelector('h5 .text-primary').textContent = this.nombre;
         clone.querySelector('h6').textContent = this.getEstudiante;
         clone.querySelector('.lead').textContent = this.edad + ' años';
-        return clone
+
+        if (this.#estado) {
+            clone.querySelector('.badge').className = 'badge bg-success';
+            clone.querySelector('.btn-success').disabled = true;
+            clone.querySelector('.btn-danger').disabled = false;
+        } else {
+            clone.querySelector('.badge').className = 'badge bg-danger';
+            clone.querySelector('.btn-danger').disabled = true;
+            clone.querySelector('.btn-success').disabled = false;
+        }
+        clone.querySelector('.badge').textContent = this.#estado ? 'Aprobado' : 'Reprobado';
+        return clone;
     }
 }
 
