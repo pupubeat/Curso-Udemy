@@ -67,6 +67,8 @@ class Estudiante extends Persona {
             clone.querySelector('.btn-success').disabled = false;
         }
         clone.querySelector('.badge').textContent = this.#estado ? 'Aprobado' : 'Reprobado';
+        clone.querySelector('.btn-success').dataset.uid = this.uid;
+        clone.querySelector('.btn-danger').dataset.uid = this.uid;
 
         return clone;
     }
