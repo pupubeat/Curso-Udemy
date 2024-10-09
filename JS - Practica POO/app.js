@@ -15,6 +15,7 @@ class Persona {
     constructor(nombre, edad) {
         this.nombre = nombre;
         this.edad = edad;
+        this.uid = `${Date.now()}`
     }
     static mostrarPersonaUI(personas, tipo) {
         if (tipo === 'Estudiante') {
@@ -66,6 +67,7 @@ class Estudiante extends Persona {
             clone.querySelector('.btn-success').disabled = false;
         }
         clone.querySelector('.badge').textContent = this.#estado ? 'Aprobado' : 'Reprobado';
+
         return clone;
     }
 }
