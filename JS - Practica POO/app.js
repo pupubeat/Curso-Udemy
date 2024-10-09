@@ -8,6 +8,30 @@ const templateProfesor = document.getElementById('templateProfesor').content;
 const estudiantes = []; // Array para agrupar todos los estudiantes a agregar en el formulario
 const profesores = [];
 
+document.addEventListener('click', (e) => {
+    if (e.target.dataset.uid) {
+        if (e.target.matches('.btn-success')) {
+            estudiantes.map((item) => {
+                if (item.uid === e.target.dataset.uid) {
+                    item.setEstado = true;
+                }
+                console.log(item)
+                return item;
+            });
+        }
+        if (e.target.matches('.btn-danger')) {
+            estudiantes.map((item) => {
+                if (item.uid === e.target.dataset.uid) {
+                    item.setEstado = false;
+                }
+                console.log(item)
+                return item;
+            });
+        }
+        Persona.mostrarPersonaUI(estudiantes, 'Estudiante')
+    }
+})
+
 // Creación de objetos: Persona, Estudiante y Profesor.
 
 // Persona //
@@ -93,12 +117,20 @@ formulario.addEventListener('submit', (e) => {
     // console.log([...datos.values()])
     const [nombre, edad, opcion] = [...datos.values()]; // desestructurar los values de la data del formulario.
 
-    // Condición si elijes la opción de estudiante.
-    if (opcion === 'Estudiante') {
-        const estudiante = new Estudiante(nombre, edad);
-        estudiantes.push(estudiante); // Agregar nuevo estudiante al array vacío.
-        Persona.mostrarPersonaUI(estudiantes, opcion);
+    if (!nombre.trim() || !edad.trim() || !opcion.trim()) {
+        console.log('Elemento vacío')
+        return
     }
+
+    if (!regexNombre.test())
+
+
+        // Condición si elijes la opción de estudiante.
+        if (opcion === 'Estudiante') {
+            const estudiante = new Estudiante(nombre, edad);
+            estudiantes.push(estudiante); // Agregar nuevo estudiante al array vacío.
+            Persona.mostrarPersonaUI(estudiantes, opcion);
+        }
     // Condición si elijes la opción de profesor.
     if (opcion === 'Profesor') {
         const profesor = new Profesor(nombre, edad);
