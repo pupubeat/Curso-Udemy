@@ -14,8 +14,10 @@
     <div class="container my-5">
         <h1>Estudiantes y Profesores</h1>
         <form id="formulario">
-            <input class="form-control mb-2" name="nombre" placeholder="Ingrese el nombre" type="text" required>
-            <input class="form-control mb-2" name="edad" placeholder="Ingrese la edad" type="text" required>
+            <input class="form-control mb-2" name="nombre" placeholder="Ingrese el nombre" type="text" id="nombre">
+            <p class="text-danger mb-2 d-none" id="alertNombre"></p>
+            <input class="form-control mb-2" name="edad" placeholder="Ingrese la edad" type="text" id="edad">
+            <p class="text-danger mb-2 d-none" id="alertEdad"></p>
 
             <select class="form-select mb-2" name="opcion">
                 <option value="Estudiante" selected>Estudiante</option>

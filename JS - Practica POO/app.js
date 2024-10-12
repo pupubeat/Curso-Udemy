@@ -1,12 +1,27 @@
 // Capturar elementos desde el HTML
 const formulario = document.getElementById('formulario');
+const inputNombre = document.getElementById('nombre');
+const inputEdad = document.getElementById('edad');
+const alertNombre = document.getElementById('alertNombre')
+const alertEdad = document.getElementById('alertEdad')
 const cardEstudiantes = document.getElementById('cardEstudiantes');
 const cardProfesor = document.getElementById('cardProfesor');
 const templateEstudiante = document.getElementById('templateEstudiante').content;
 const templateProfesor = document.getElementById('templateProfesor').content;
 
-const estudiantes = []; // Array para agrupar todos los estudiantes a agregar en el formulario
-const profesores = [];
+const regexNombre = /^[A-Za-z]+$/
+const regexEdad = /^[0-9]+$/
+
+const estudiantes = []; // Array para agrupar todos los estudiantes a agregar en el formulario.
+const profesores = []; // Array para agrupar todos los profesores a agregar en el formulario.
+
+// Función para invocar los posibles mensajes de errores
+const mensajeError = (errores) => {
+    errores.forEach((item) => {
+        item.tipo.classList.remove('d-none')
+        item.tipo.textContent = item.mensaje
+    });
+}
 
 document.addEventListener('click', (e) => {
     if (e.target.dataset.uid) {
@@ -113,28 +128,63 @@ class Profesor extends Persona {
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
+    // Captar los datos del formulario.
     const datos = new FormData(formulario);
+
+    // Array de los posibles errores que se presenten
+    const errores = []
+
     // console.log([...datos.values()])
     const [nombre, edad, opcion] = [...datos.values()]; // desestructurar los values de la data del formulario.
 
-    if (!nombre.trim() || !edad.trim() || !opcion.trim()) {
-        console.log('Elemento vacío')
+    // Validaciones para el label de Nombre.
+    const valueNombre = inputNombre.value
+    if (!regexNombre.test(valueNombre) || !valueNombre.trim()) {
+        inputNombre.classList.add('is-invalid')
+        errores.push({
+            tipo: alertNombre,
+            mensaje: 'Formato no válido, usar sólo letras.'
+        })
+
+    } else {
+        inputNombre.classList.remove('is-invalid')
+        inputNombre.classList.add('is-valid')
+        alertNombre.classList.add('d-none')
+    }
+
+    // Validaciones para el label de Edad.
+    const valueEdad = inputEdad.value
+    if (!regexEdad.test(valueEdad) || !valueEdad.trim()) {
+        inputEdad.classList.add('is-invalid')
+        errores.push({
+            tipo: alertEdad,
+            mensaje: 'Formato no válido, usar sólo números.'
+        })
+
+    } else {
+        inputEdad.classList.remove('is-invalid')
+        inputEdad.classList.add('is-valid')
+        alertEdad.classList.add('d-none')
+    }
+
+    // Invocar mensaje de error.
+    if (errores.length !== 0) {
+        mensajeError(errores)
         return
     }
 
-    if (!regexNombre.test())
-
-
-        // Condición si elijes la opción de estudiante.
-        if (opcion === 'Estudiante') {
-            const estudiante = new Estudiante(nombre, edad);
-            estudiantes.push(estudiante); // Agregar nuevo estudiante al array vacío.
-            Persona.mostrarPersonaUI(estudiantes, opcion);
-        }
+    // Condición si elijes la opción de estudiante.
+    if (opcion === 'Estudiante') {
+        const estudiante = new Estudiante(nombre, edad);
+        estudiantes.push(estudiante); // Agregar nuevo estudiante al array vacío.
+        Persona.mostrarPersonaUI(estudiantes, opcion);
+    }
     // Condición si elijes la opción de profesor.
     if (opcion === 'Profesor') {
         const profesor = new Profesor(nombre, edad);
         profesores.push(profesor);
         Persona.mostrarPersonaUI(profesores, opcion);
     }
+
+
 })
