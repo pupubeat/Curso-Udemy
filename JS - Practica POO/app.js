@@ -186,5 +186,4 @@ formulario.addEventListener('submit', (e) => {
         Persona.mostrarPersonaUI(profesores, opcion);
     }
 
-
 })
