@@ -20,3 +20,11 @@ formulario.addEventListener('submit', e => {
     agregarToDo(todo);
     pintarToDos();
 })
+
+agregarToDo = (todo) => {
+    const objetoToDO = {
+        nombre: todo,
+        id: `${Date.now}`
+    };
+    todos.push(objetoToDO)
+}
