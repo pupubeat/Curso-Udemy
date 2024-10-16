@@ -27,4 +27,4 @@ agregarToDo = (todo) => {
         id: `${Date.now}`
     };
     todos.push(objetoToDO)
-}
+};
