@@ -24,8 +24,14 @@ pintarToDos = () => {
         clone.querySelector('.btn').dataset.id = item.id;
         fragment.appendChild(clone);
     })
-    pintarToDos.appendChild(fragment)
+    pintarToDos.appendChild(fragment);
 }
+
+document.addEventListener('click', e => {
+    if (e.target.matches('.btn-danger')) {
+        todos = todos.filter((item) => item.id !== e.target.dataset.id)
+    }
+})
 
 formulario.addEventListener('submit', e => {
     e.preventDefault();
