@@ -5,6 +5,28 @@ const templateToDO = document.getElementById('templateToDO').content
 
 let todos = []
 
+agregarToDo = (todo) => {
+    const objetoToDO = {
+        nombre: todo,
+        id: `${Date.now}`
+    };
+    todos.push(objetoToDO)
+};
+
+pintarToDos = () => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+
+    pintarToDos.textContent = '';
+    const fragment = document.createDocumentFragment();
+    todos.forEach((item) => {
+        const clone = templateToDO.cloneNode(true);
+        clone.querySelector('.lead').textContent = item.nombre;
+        clone.querySelector('.btn').dataset.id = item.id;
+        fragment.appendChild(clone);
+    })
+    pintarToDos.appendChild(fragment)
+}
+
 formulario.addEventListener('submit', e => {
     e.preventDefault();
     alertInput.classList.add('d-none')
@@ -20,11 +42,3 @@ formulario.addEventListener('submit', e => {
     agregarToDo(todo);
     pintarToDos();
 })
-
-agregarToDo = (todo) => {
-    const objetoToDO = {
-        nombre: todo,
-        id: `${Date.now}`
-    };
-    todos.push(objetoToDO)
-};
