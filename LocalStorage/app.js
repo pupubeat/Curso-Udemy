@@ -29,7 +29,8 @@ pintarToDos = () => {
 
 document.addEventListener('click', e => {
     if (e.target.matches('.btn-danger')) {
-        todos = todos.filter((item) => item.id !== e.target.dataset.id)
+        todos = todos.filter((item) => item.id !== e.target.dataset.id);
+        pintarToDos();
     }
 })
 
