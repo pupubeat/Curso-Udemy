@@ -13,10 +13,10 @@ agregarToDo = (todo) => {
     todos.push(objetoToDO)
 };
 
-pintarToDos = () => {
+const mostrarToDos = () => {
     localStorage.setItem('todos', JSON.stringify(todos))
 
-    pintarToDos.textContent = '';
+    mostrarToDo.textContent = '';
     const fragment = document.createDocumentFragment();
     todos.forEach((item) => {
         const clone = templateToDO.cloneNode(true);
@@ -24,13 +24,13 @@ pintarToDos = () => {
         clone.querySelector('.btn').dataset.id = item.id;
         fragment.appendChild(clone);
     })
-    pintarToDos.appendChild(fragment);
+    mostrarToDo.appendChild(fragment);
 }
 
 document.addEventListener('click', e => {
     if (e.target.matches('.btn-danger')) {
         todos = todos.filter((item) => item.id !== e.target.dataset.id);
-        pintarToDos();
+        mostrarToDos()
     }
 })
 
@@ -47,5 +47,12 @@ formulario.addEventListener('submit', e => {
     }
 
     agregarToDo(todo);
-    pintarToDos();
+    mostrarToDos();
+})
+
+document.addEventListener('DOMContentLoaded', e => {
+    if (localStorage.getItem('todos')) {
+        todos = JSON.parse(localStorage.getItem('todos'));
+        mostrarToDos();
+    }
 })
