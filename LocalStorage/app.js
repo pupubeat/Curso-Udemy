@@ -8,7 +8,7 @@ let todos = []
 agregarToDo = (todo) => {
     const objetoToDO = {
         nombre: todo,
-        id: `${Date.now}`
+        id: `${Date.now()}`
     };
     todos.push(objetoToDO)
 };
