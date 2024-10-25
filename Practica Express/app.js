@@ -3,6 +3,7 @@ import 'dotenv/config'
 import { engine, create } from 'express-handlebars';
 import loginRoute from './routes/auth.route.js'
 import homeRoute from './routes/home.route.js'
+import './database/data.js'
 
 const app = express();
 const hbs = create({
