@@ -12,6 +12,9 @@ const urlSchema = new Schema({
         type: String,
         unique: true,
         required: true,
-        default: nanoid()
+        default: nanoid(6)
     }
-})
+});
+
+const Url = mongoose.model('Url', urlSchema);
+module.exports = Url;
