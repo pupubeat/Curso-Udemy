@@ -1,9 +1,8 @@
 import { Router } from "express";
+import { homeControllers } from "../controllers/homeControllers.js";
 
 const router = Router()
 
-router.get('/', (req, res) => {
-    res.render('home')
-})
+router.get('/', homeControllers.leerUrls)
 
 export default router
